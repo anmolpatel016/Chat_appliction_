@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-screen" id="loginScreen">
+            <h1><i class="fa-solid fa-message fa-sm"></i>  Real-Time Chat</h1>
+            <form class="login-form" id="loginForm">
+                <input type="text" id="usernameInput" placeholder="Enter your username" required>
+                <button type="submit" class="login-btn" id="loginBtn">Join Chat</button>
+                <div class="error-message" id="loginError"></div>
+            </form>
+        </div>
+        <div class="chat-interface" id="chatInterface">
+            <button class="mobile-toggle" id="mobileToggle">☰</button>
+            <div class="sidebar" id="sidebar">
+                <div class="user-details">
+                    <h3 id="currentUser">Welcome!</h3>
+                    <div>
+                        <button class="logout-btn" id="logoutBtn">Logout</button>
+                        <button class="export-btn" id="exportBtn">Export</button>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search messages...">
+                </div>
+
+                <div class="rooms-section">
+                    <h4>Chat Rooms</h4>
+                    <ul class="room-list" id="roomList"></ul>
+
+                    <div class="new-room">
+                        <input type="text" id="newRoomInput" placeholder="New room name">
+                        <button type="button" id="createRoomBtn">Create</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-chat">
+                <div class="chat-header">
+                    <h2 id="currentRoomName">Select a room to start chatting</h2>
+                    <div class="online-users" id="onlineUsers"></div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="message system">
+                        <div class="message-content">Welcome to the chat! Select a room to start messaging.</div>
+                    </div>
+                </div>
+
+                <div class="message-input-container">
+                    <form class="message-input-form" id="messageForm">
+                        <div class="style-button">
+                            <button type="button" class="s-btn" data-format="bold">B</button>
+                            <button type="button" class="s-btn" data-format="italic">I</button>
+                        </div>
+                        <input type="text" class="message-input" id="messageInput" placeholder="Type your message..."
+                            disabled>
+                        <button type="submit" class="send-btn" id="sendBtn" disabled>Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
